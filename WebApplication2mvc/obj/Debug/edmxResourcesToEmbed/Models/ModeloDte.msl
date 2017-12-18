@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DteModeloStoreContainer" CdmEntityContainer="DteEntidades">
+    <EntitySetMapping Name="Archivoes">
+      <EntityTypeMapping TypeName="DteModelo.Archivo">
+        <MappingFragment StoreEntitySet="Archivo">
+          <ScalarProperty Name="arc_id" ColumnName="arc_id" />
+          <ScalarProperty Name="arc_emisor" ColumnName="arc_emisor" />
+          <ScalarProperty Name="arc_dte_folio" ColumnName="arc_dte_folio" />
+          <ScalarProperty Name="arc_dte_tipo" ColumnName="arc_dte_tipo" />
+          <ScalarProperty Name="arc_tipo" ColumnName="arc_tipo" />
+          <ScalarProperty Name="arc_nombre" ColumnName="arc_nombre" />
+          <ScalarProperty Name="arc_path" ColumnName="arc_path" />
+          <ScalarProperty Name="arc_dte_id" ColumnName="arc_dte_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dtes">
+      <EntityTypeMapping TypeName="DteModelo.Dte">
+        <MappingFragment StoreEntitySet="Dte">
+          <ScalarProperty Name="dte_id" ColumnName="dte_id" />
+          <ScalarProperty Name="dte_tipo_dte" ColumnName="dte_tipo_dte" />
+          <ScalarProperty Name="dte_folio" ColumnName="dte_folio" />
+          <ScalarProperty Name="dte_emisor" ColumnName="dte_emisor" />
+          <ScalarProperty Name="dte_receptor" ColumnName="dte_receptor" />
+          <ScalarProperty Name="dte_emisor_razonsocial" ColumnName="dte_emisor_razonsocial" />
+          <ScalarProperty Name="dte_receptor_razonsocial" ColumnName="dte_receptor_razonsocial" />
+          <ScalarProperty Name="dte_fecha_emision" ColumnName="dte_fecha_emision" />
+          <ScalarProperty Name="dte_fecha_recepcion" ColumnName="dte_fecha_recepcion" />
+          <ScalarProperty Name="dte_monto_total" ColumnName="dte_monto_total" />
+          <ScalarProperty Name="dte_sii_estado" ColumnName="dte_sii_estado" />
+          <ScalarProperty Name="dte_sii_estado_desc" ColumnName="dte_sii_estado_desc" />
+          <ScalarProperty Name="dte_tipo_distribucion" ColumnName="dte_tipo_distribucion" />
+          <ScalarProperty Name="dte_acuse" ColumnName="dte_acuse" />
+          <ScalarProperty Name="dte_estado_comercial" ColumnName="dte_estado_comercial" />
+          <ScalarProperty Name="dte_ws_descargado" ColumnName="dte_ws_descargado" />
+          <ScalarProperty Name="dte_resp_cliente_cod" ColumnName="dte_resp_cliente_cod" />
+          <ScalarProperty Name="dte_resp_cliente_desc" ColumnName="dte_resp_cliente_desc" />
+          <ScalarProperty Name="dte_distribucion_cod" ColumnName="dte_distribucion_cod" />
+          <ScalarProperty Name="dte_distribucion_desc" ColumnName="dte_distribucion_desc" />
+          <ScalarProperty Name="dte_comercial_cod" ColumnName="dte_comercial_cod" />
+          <ScalarProperty Name="dte_comercial_desc" ColumnName="dte_comercial_desc" />
+          <ScalarProperty Name="dte_acuse_cod" ColumnName="dte_acuse_cod" />
+          <ScalarProperty Name="dte_acuse_est" ColumnName="dte_acuse_est" />
+          <ScalarProperty Name="dte_url_custodia" ColumnName="dte_url_custodia" />
+          <ScalarProperty Name="dte_tipo_ingreso" ColumnName="dte_tipo_ingreso" />
+          <ScalarProperty Name="dte_fch_venc" ColumnName="dte_fch_venc" />
+          <ScalarProperty Name="dte_vlr_codigo" ColumnName="dte_vlr_codigo" />
+          <ScalarProperty Name="dte_mnt_neto" ColumnName="dte_mnt_neto" />
+          <ScalarProperty Name="dte_mnt_exe" ColumnName="dte_mnt_exe" />
+          <ScalarProperty Name="dte_tasa_iva" ColumnName="dte_tasa_iva" />
+          <ScalarProperty Name="dte_iva" ColumnName="dte_iva" />
+          <ScalarProperty Name="dte_saldo_anterior" ColumnName="dte_saldo_anterior" />
+          <ScalarProperty Name="dte_vlr_pagar" ColumnName="dte_vlr_pagar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

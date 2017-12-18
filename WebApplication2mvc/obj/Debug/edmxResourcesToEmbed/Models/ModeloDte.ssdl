@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DteModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Archivo">
+    <Key>
+      <PropertyRef Name="arc_id" />
+    </Key>
+    <Property Name="arc_id" Type="numeric" Precision="28" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="arc_emisor" Type="varchar" MaxLength="10" />
+    <Property Name="arc_dte_folio" Type="numeric" Precision="28" Scale="0" />
+    <Property Name="arc_dte_tipo" Type="numeric" Precision="28" Scale="0" />
+    <Property Name="arc_tipo" Type="varchar" MaxLength="30" />
+    <Property Name="arc_nombre" Type="varchar" MaxLength="200" />
+    <Property Name="arc_path" Type="varchar" MaxLength="100" />
+    <Property Name="arc_dte_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Dte">
+    <Key>
+      <PropertyRef Name="dte_id" />
+    </Key>
+    <Property Name="dte_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dte_tipo_dte" Type="numeric" Precision="28" Scale="0" Nullable="false" />
+    <Property Name="dte_folio" Type="numeric" Precision="28" Scale="0" Nullable="false" />
+    <Property Name="dte_emisor" Type="varchar" MaxLength="10" />
+    <Property Name="dte_receptor" Type="varchar" MaxLength="10" />
+    <Property Name="dte_emisor_razonsocial" Type="varchar" MaxLength="100" />
+    <Property Name="dte_receptor_razonsocial" Type="varchar" MaxLength="100" />
+    <Property Name="dte_fecha_emision" Type="date" />
+    <Property Name="dte_fecha_recepcion" Type="date" />
+    <Property Name="dte_monto_total" Type="float" />
+    <Property Name="dte_sii_estado" Type="varchar" MaxLength="20" />
+    <Property Name="dte_sii_estado_desc" Type="varchar" MaxLength="250" />
+    <Property Name="dte_tipo_distribucion" Type="varchar" MaxLength="12" />
+    <Property Name="dte_acuse" Type="varchar" MaxLength="12" />
+    <Property Name="dte_estado_comercial" Type="varchar" MaxLength="20" />
+    <Property Name="dte_ws_descargado" Type="char" MaxLength="1" />
+    <Property Name="dte_resp_cliente_cod" Type="int" />
+    <Property Name="dte_resp_cliente_desc" Type="varchar" MaxLength="200" />
+    <Property Name="dte_distribucion_cod" Type="int" />
+    <Property Name="dte_distribucion_desc" Type="varchar" MaxLength="250" />
+    <Property Name="dte_comercial_cod" Type="int" />
+    <Property Name="dte_comercial_desc" Type="varchar" MaxLength="200" />
+    <Property Name="dte_acuse_cod" Type="int" />
+    <Property Name="dte_acuse_est" Type="varchar" MaxLength="200" />
+    <Property Name="dte_url_custodia" Type="varchar" MaxLength="250" />
+    <Property Name="dte_tipo_ingreso" Type="varchar" MaxLength="12" />
+    <Property Name="dte_fch_venc" Type="date" />
+    <Property Name="dte_vlr_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="dte_mnt_neto" Type="float" />
+    <Property Name="dte_mnt_exe" Type="float" />
+    <Property Name="dte_tasa_iva" Type="float" />
+    <Property Name="dte_iva" Type="float" />
+    <Property Name="dte_saldo_anterior" Type="float" />
+    <Property Name="dte_vlr_pagar" Type="float" />
+  </EntityType>
+  <EntityContainer Name="DteModeloStoreContainer">
+    <EntitySet Name="Archivo" EntityType="Self.Archivo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dte" EntityType="Self.Dte" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

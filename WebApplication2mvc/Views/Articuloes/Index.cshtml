@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WebApplication2mvc.Models.Articulo>
+
+@{
+    ViewBag.Title = "Home Artículo";
+}
+
+<h2>Index</h2>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        alert("hello world");
+    });
+</script>
+
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+@*filtro de articulos*@
+@using (Html.BeginForm())
+{
+    <p>
+        buscar articulo: @Html.TextBox("SearchString")
+        <input type="submit" value="tengo suerte.." />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreArticulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescArticulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioArt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadesExistencia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreArticulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescArticulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecioArt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnidadesExistencia)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+
+</table>

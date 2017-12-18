@@ -1,0 +1,225 @@
+﻿@model IEnumerable<WebApplication2mvc.Models.Dte>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_tipo_dte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_folio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_emisor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_receptor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_emisor_razonsocial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_receptor_razonsocial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_fecha_emision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_fecha_recepcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_monto_total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_sii_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_sii_estado_desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_tipo_distribucion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_acuse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_estado_comercial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_ws_descargado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_resp_cliente_cod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_resp_cliente_desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_distribucion_cod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_distribucion_desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_comercial_cod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_comercial_desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_acuse_cod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_acuse_est)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_url_custodia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_tipo_ingreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_fch_venc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_vlr_codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_mnt_neto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_mnt_exe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_tasa_iva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_iva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_saldo_anterior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dte_vlr_pagar)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_tipo_dte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_folio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_emisor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_receptor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_emisor_razonsocial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_receptor_razonsocial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_fecha_emision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_fecha_recepcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_monto_total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_sii_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_sii_estado_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_tipo_distribucion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_acuse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_estado_comercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_ws_descargado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_resp_cliente_cod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_resp_cliente_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_distribucion_cod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_distribucion_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_comercial_cod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_comercial_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_acuse_cod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_acuse_est)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_url_custodia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_tipo_ingreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_fch_venc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_vlr_codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_mnt_neto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_mnt_exe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_tasa_iva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_iva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_saldo_anterior)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dte_vlr_pagar)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.dte_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.dte_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.dte_id })
+        </td>
+    </tr>
+}
+
+</table>

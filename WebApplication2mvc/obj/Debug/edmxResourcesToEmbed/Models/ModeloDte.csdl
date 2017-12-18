@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DteModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Archivo">
+    <Key>
+      <PropertyRef Name="arc_id" />
+    </Key>
+    <Property Name="arc_id" Type="Decimal" Precision="28" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="arc_emisor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="arc_dte_folio" Type="Decimal" Precision="28" Scale="0" />
+    <Property Name="arc_dte_tipo" Type="Decimal" Precision="28" Scale="0" />
+    <Property Name="arc_tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="arc_nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="arc_path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="arc_dte_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Dte">
+    <Key>
+      <PropertyRef Name="dte_id" />
+    </Key>
+    <Property Name="dte_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dte_tipo_dte" Type="Decimal" Precision="28" Scale="0" Nullable="false" />
+    <Property Name="dte_folio" Type="Decimal" Precision="28" Scale="0" Nullable="false" />
+    <Property Name="dte_emisor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dte_receptor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dte_emisor_razonsocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dte_receptor_razonsocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dte_fecha_emision" Type="DateTime" Precision="0" />
+    <Property Name="dte_fecha_recepcion" Type="DateTime" Precision="0" />
+    <Property Name="dte_monto_total" Type="Double" />
+    <Property Name="dte_sii_estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dte_sii_estado_desc" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="dte_tipo_distribucion" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="dte_acuse" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="dte_estado_comercial" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dte_ws_descargado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="dte_resp_cliente_cod" Type="Int32" />
+    <Property Name="dte_resp_cliente_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dte_distribucion_cod" Type="Int32" />
+    <Property Name="dte_distribucion_desc" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="dte_comercial_cod" Type="Int32" />
+    <Property Name="dte_comercial_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dte_acuse_cod" Type="Int32" />
+    <Property Name="dte_acuse_est" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dte_url_custodia" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="dte_tipo_ingreso" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="dte_fch_venc" Type="DateTime" Precision="0" />
+    <Property Name="dte_vlr_codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dte_mnt_neto" Type="Double" />
+    <Property Name="dte_mnt_exe" Type="Double" />
+    <Property Name="dte_tasa_iva" Type="Double" />
+    <Property Name="dte_iva" Type="Double" />
+    <Property Name="dte_saldo_anterior" Type="Double" />
+    <Property Name="dte_vlr_pagar" Type="Double" />
+  </EntityType>
+  <EntityContainer Name="DteEntidades" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Archivoes" EntityType="Self.Archivo" />
+    <EntitySet Name="Dtes" EntityType="Self.Dte" />
+  </EntityContainer>
+</Schema>
