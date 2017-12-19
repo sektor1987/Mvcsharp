@@ -7,7 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication2mvc.Models;
-
+using Rotativa;
+using System.IO;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.Web.Helpers;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 namespace WebApplication2mvc.Controllers
 {
     public class ArticuloesController : Controller
@@ -44,6 +50,12 @@ namespace WebApplication2mvc.Controllers
                 return HttpNotFound();
             }
             return View(articulo);
+        }
+
+        public ActionResult PrintAllReport()
+        {
+            var report = new ActionAsPdf("Index");
+            return report;
         }
 
         //Hint: https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
@@ -152,5 +164,47 @@ namespace WebApplication2mvc.Controllers
             }
             base.Dispose(disposing);
         }
+
+      
+public void ExportToExcel()
+{
+    var model = db.Articulos.ToList();
+    
+    Helper.Export export = new Helper.Export();
+    export.ToExcel(Response, model);
+}
+
+        public FileStreamResult CreatePdf()
+        { //HINT: https://stackoverflow.com/questions/47651119/asp-net-mvc-exporting-webgrid-to-pdf
+            List<Articulo> all = new List<Articulo>();
+            all = db.Articulos.ToList();
+            WebGrid grid = new WebGrid(source: all, canPage: false, canSort: false);
+            string gridHtml = grid.GetHtml(
+                   columns: grid.Columns(
+                            grid.Column("Id", "Id"),
+                            grid.Column("NombreArticulo", "NombreArticulo"),
+                            grid.Column("DescArticulo", "DescArticulo"),
+                            grid.Column("PrecioArt", "PrecioArt"),
+                            grid.Column("UnidadesExistencia", "UnidadesExistencia")
+                           )
+                    ).ToString();
+            string exportData = String.Format("{0}{1}", "", gridHtml);
+            var bytes = System.Text.Encoding.UTF8.GetBytes(exportData);
+            using (var input = new MemoryStream(bytes))
+            {
+                var output = new MemoryStream();
+                var document = new iTextSharp.text.Document(PageSize.A4, 50, 50, 50, 50);
+                var writer = PdfWriter.GetInstance(document, output);
+                writer.CloseStream = false;
+                document.Open();
+                var xmlWorker = iTextSharp.tool.xml.XMLWorkerHelper.GetInstance();
+                xmlWorker.ParseXHtml(writer, document, input, System.Text.Encoding.UTF8);
+                document.Close();
+                output.Position = 0;
+                return new FileStreamResult(output, "application/pdf");
+            }
+        }
+  
+
     }
 }

@@ -22,6 +22,16 @@
         buscar articulo: @Html.TextBox("SearchString")
         <input type="submit" value="tengo suerte.." />
     </p>
+
+    <p>
+        @*@Html.ActionLink("Print", "PrintAllReport")*@
+        @Html.ActionLink("Create PDF", "CreatePdf")
+    </p>
+
+    <p>
+        @*@Html.ActionLink("Print", "PrintAllReport")*@
+        @Html.ActionLink("Exportar a Excel", "ExportToExcel")
+    </p>
 }
 
 <table class="table">
